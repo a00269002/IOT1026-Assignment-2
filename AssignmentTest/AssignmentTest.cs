@@ -54,14 +54,14 @@ namespace AssignmentTest
         {
             TreasureChest chest = new TreasureChest(TreasureChest.State.Closed);//Creating a new chest in state Closed
             chest.Close();
-            Assert.AreEqual(chest.GetState(), TreasureChest.State.Close);
+            Assert.AreEqual(chest.GetState(), TreasureChest.State.Closed);
         }
 
         [TestMethod]
         public void CloseOpenTest()
         {
             TreasureChest chest = new TreasureChest(TreasureChest.State.Open);//Creating a new chest in state Open
-            chest.Closed();
+            chest.Close();
             Assert.AreEqual(chest.GetState(), TreasureChest.State.Closed);
         }
     }
