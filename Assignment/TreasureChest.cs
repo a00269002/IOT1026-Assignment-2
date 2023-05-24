@@ -15,7 +15,7 @@
             _lootQuality = LootQuality.Green;
         }
 
-        public TreasureChest(State state)
+        public TreasureChest(State state): this()
         {
             _state = state;
         }
