@@ -35,5 +35,34 @@ namespace AssignmentTest
             chest.Open();
             Assert.AreEqual(chest.GetState(), TreasureChest.State.Open);
         }
+
+        //Unit test cases for Close method
+        //1. Try to close a closed chest
+        //2. Try to close a opened chest
+        //3. Try to close a locked chest
+        //Chest starts in locked state
+
+        [TestMethod]
+        public void CloseLockedTest()
+        {
+            TreasureChest chest = new TreasureChest(TreasureChest.State.Locked);//Creating a new chest in state Locked
+            chest.Close();
+            Assert.AreEqual(chest.GetState(), TreasureChest.State.Locked);
+        }
+        [TestMethod]
+        public void CloseClosedTest()
+        {
+            TreasureChest chest = new TreasureChest(TreasureChest.State.Closed);//Creating a new chest in state Closed
+            chest.Close();
+            Assert.AreEqual(chest.GetState(), TreasureChest.State.Close);
+        }
+
+        [TestMethod]
+        public void CloseOpenTest()
+        {
+            TreasureChest chest = new TreasureChest(TreasureChest.State.Open);//Creating a new chest in state Open
+            chest.Closed();
+            Assert.AreEqual(chest.GetState(), TreasureChest.State.Closed);
+        }
     }
 }
