@@ -54,8 +54,18 @@
         }
         public void Unlock()
         {
-            Console.WriteLine("Unlocked");
-            _state = State.Closed;
+            if (_state == State.Locked)
+            {
+                _state = State.Closed;
+            }
+            else if (_state == State.Closed)
+            {
+                Console.WriteLine("The chest is closed!");
+            }
+            else if (_state == State.Open)
+            {
+                Console.WriteLine("The chest cannot be unlocked because it is open.");
+            }
         }
 
         public void Lock()
