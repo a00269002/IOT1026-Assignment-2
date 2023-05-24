@@ -78,25 +78,25 @@
         }
 
 
-        private void Unlock()
+        public void Unlock()
         {
             Console.WriteLine("Unlocked");
             _state = State.Closed;
         }
 
-        private void Lock()
+        public void Lock()
         {
             Console.WriteLine("Locked");
             _state = State.Locked;
         }
 
-        private void Open()
+        public void Open()
         {
             Console.WriteLine("Opened");
             _state = State.Open;
         }
 
-        private void Close()
+        public void Close()
         {
             Console.WriteLine("Closed");
             _state = State.Closed;
