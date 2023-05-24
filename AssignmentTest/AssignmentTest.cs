@@ -5,6 +5,7 @@ namespace AssignmentTest
     [TestClass]
     public class AssignmentTests
     {
+        //Unit test cases for Open method
         //1. Try to open an opened chest
         //2. Try to open a closed chest
         //3. Try to open a locked chest
