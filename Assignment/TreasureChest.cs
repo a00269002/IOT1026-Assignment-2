@@ -27,56 +27,22 @@
             _lootQuality = lootQuality;
         }
 
-        public State? Manipulate(Action action)
+        public State Manipulate(Action action)
         {
             switch (action)
             {
                 case Action.Open:
-                    if (_state == State.Closed)
-                    {
                         Open();
-                        _state = State.Open;
-                    }
-                    else
-                    {
-                        throw new InvalidOperationException("Invalid action: Open is only valid for a closed chest.");
-                    }
                     break;
                 case Action.Close:
-                    if (_state == State.Open)
-                    {
-                        Close();
-                        _state = State.Closed;
-                    }
-                    else
-                    {
-                        throw new InvalidOperationException("Invalid action: Close is only valid for an opened chest.");
-                    }
+                    Close();
                     break;
                 case Action.Lock:
-                    if (_state == State.Closed)
-                    {
-                        Lock();
-                        _state = State.Locked;
-                    }
-                    else
-                    {
-                        throw new InvalidOperationException("Invalid action: Unlock is only valid for a locked chest.");
-                    }
+                    Lock();
                     break;
                 case Action.Unlock:
-                    if (_state == State.Locked)
-                    {
-                        Unlock();
-                        _state = State.Closed;
-                    }
-                    else
-                    {
-                        throw new InvalidOperationException("Invalid action: Unlock is only valid for a locked chest.");
-                    }
+                    Unlock();
                     break;
-                default:
-                    throw new ArgumentException("Invalid action: The provided action is not supported.");
             }
             return _state;
         }
