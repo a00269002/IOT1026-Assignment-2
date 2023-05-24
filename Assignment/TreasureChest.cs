@@ -9,37 +9,95 @@
 
         public TreasureChest()
         {
-            throw new NotImplementedException();
+            _material = Material.Iron;
+            _lockType = LockType.Expert;
+            _lootQuality = LootQuality.Green;
         }
 
         public TreasureChest(Material material, LockType lockType, LootQuality lootQuality)
         {
-            throw new NotImplementedException();
+            _material = material;
+            _lockType = lockType;
+            _lootQuality = lootQuality;
         }
 
         public State? Manipulate(Action action)
         {
-            throw new NotImplementedException();
+            switch (action)
+            {
+                case Action.Open:
+                    if (_state == State.Closed)
+                    {
+                        Open();
+                        _state = State.Open;
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException("Invalid action: Open is only valid for a closed chest.");
+                    }
+                    break;
+                case Action.Close:
+                    if (_state == State.Open)
+                    {
+                        Close();
+                        _state = State.Closed;
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException("Invalid action: Close is only valid for an opened chest.");
+                    }
+                    break;
+                case Action.Lock:
+                    if (_state == State.Closed)
+                    {
+                        Lock();
+                        _state = State.Locked;
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException("Invalid action: Unlock is only valid for a locked chest.");
+                    }
+                    break;
+                case Action.Unlock:
+                    if (_state == State.Locked)
+                    {
+                        Unlock();
+                        _state = State.Closed;
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException("Invalid action: Unlock is only valid for a locked chest.");
+                    }
+                    break;
+                default:
+                    throw new ArgumentException("Invalid action: The provided action is not supported.");
+            }
+            return _state;
         }
+
 
         private void Unlock()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Unlocked");
+            _state = State.Closed;
         }
 
         private void Lock()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Locked");
+            _state = State.Locked;
         }
 
         private void Open()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Opened");
+            _state = State.Open;
         }
 
         private void Close()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Closed");
+            _state = State.Closed;
         }
 
         public override string ToString()
