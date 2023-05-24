@@ -13,7 +13,7 @@ namespace AssignmentTest
         [TestMethod]
         public void OpenLockedTest()
         {
-            TreasureChest chest = new TreasureChest(TreasureChest.State.Locked);
+            TreasureChest chest = new TreasureChest(TreasureChest.State.Locked);//Creating a new chest in state Locked
             //Try to open the chest
             //Verify chest is still locked
             chest.Open();
