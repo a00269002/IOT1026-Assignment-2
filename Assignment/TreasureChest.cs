@@ -83,8 +83,18 @@
 
         public void Close()
         {
-            Console.WriteLine("Closed");
-            _state = State.Closed;
+            if (_state == State.Open)
+            {
+                _state = State.Closed;
+            }
+            else if (_state == State.Closed)
+            {
+                Console.WriteLine("The chest is already close!");
+            }
+            else if (_state == State.Locked)
+            {
+                Console.WriteLine("The chest cannot be locked because it is locked.");
+            }
         }
 
         public override string ToString()
