@@ -7,6 +7,7 @@
         private readonly LockType _lockType;
         private readonly LootQuality _lootQuality;
 
+        //Default constructor
         public TreasureChest()
         {
             _material = Material.Iron;
@@ -14,6 +15,7 @@
             _lootQuality = LootQuality.Green;
         }
 
+        //Parametrized constructor
         public TreasureChest(Material material, LockType lockType, LootQuality lootQuality)
         {
             _material = material;
