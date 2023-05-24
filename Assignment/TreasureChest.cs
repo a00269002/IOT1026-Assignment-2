@@ -32,7 +32,7 @@
             switch (action)
             {
                 case Action.Open:
-                        Open();
+                    Open();
                     break;
                 case Action.Close:
                     Close();
@@ -60,7 +60,7 @@
             }
             else if (_state == State.Closed)
             {
-                Console.WriteLine("The chest is closed!");
+                Console.WriteLine("The chest cannot unlocked because it is closed.");
             }
             else if (_state == State.Open)
             {
@@ -80,7 +80,7 @@
             }
             else if (_state == State.Open)
             {
-                Console.WriteLine("The chest cannot be locked because it is closed.");
+                Console.WriteLine("The chest cannot be locked because it is open.");
             }
         }
 
@@ -113,7 +113,7 @@
             }
             else if (_state == State.Locked)
             {
-                Console.WriteLine("The chest cannot be locked because it is locked.");
+                Console.WriteLine("The chest cannot be close because it is locked.");
             }
         }
 
