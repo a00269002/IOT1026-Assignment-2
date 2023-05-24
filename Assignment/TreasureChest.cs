@@ -1,6 +1,6 @@
 ﻿namespace Assignment
 {
-    class TreasureChest
+    public class TreasureChest
     {
         private State _state = State.Locked;
         private readonly Material _material;
