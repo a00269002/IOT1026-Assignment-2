@@ -100,8 +100,16 @@
 
         public void Open()
         {
-            Console.WriteLine("Opened");
-            _state = State.Open;
+            if (_state == State.Closed)
+            {
+                _state = State.Open;
+            }
+            else if (_state == State.Open){
+                Console.WriteLine("The chest is already open!");
+            }else if (_state == State.Locked)
+            {
+                Console.WriteLine("The chest cannot open because it is locked.");
+            }
         }
 
         public void Close()
