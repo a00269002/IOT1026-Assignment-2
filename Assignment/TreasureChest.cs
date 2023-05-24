@@ -15,7 +15,7 @@
             _lootQuality = LootQuality.Green;
         }
 
-        public TreasureChest(State state): this()
+        public TreasureChest(State state) : this()
         {
             _state = state;
         }
@@ -100,15 +100,18 @@
 
         public void Open()
         {
+
             if (_state == State.Closed)
             {
                 _state = State.Open;
             }
-            else if (_state == State.Open){
-                Console.WriteLine("The chest is already open!");
-            }else if (_state == State.Locked)
+            else if (_state == State.Open)
             {
-                Console.WriteLine("The chest cannot open because it is locked.");
+                throw new InvalidOperationException("Chest is already open");
+            }
+            else if (_state == State.Locked)
+            {
+                throw new InvalidOperationException("The chest cannot be opened because it is locked.");
             }
         }
 
