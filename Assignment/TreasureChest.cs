@@ -77,7 +77,11 @@
             return _state;
         }
 
-
+        //Method to return the state, to avoid change to public the state 
+        public  State GetState()
+        {
+            return _state;
+        }
         public void Unlock()
         {
             Console.WriteLine("Unlocked");
