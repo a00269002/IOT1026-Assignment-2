@@ -107,11 +107,11 @@
             }
             else if (_state == State.Open)
             {
-                throw new InvalidOperationException("Chest is already open");
+                Console.WriteLine("The chest is already open!");
             }
             else if (_state == State.Locked)
             {
-                throw new InvalidOperationException("The chest cannot be opened because it is locked.");
+                Console.WriteLine("The chest cannot be opened because it is locked.");
             }
         }
 
