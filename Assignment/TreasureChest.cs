@@ -15,6 +15,10 @@
             _lootQuality = LootQuality.Green;
         }
 
+        public TreasureChest(State state)
+        {
+            _state = state;
+        }
         //Parametrized constructor
         public TreasureChest(Material material, LockType lockType, LootQuality lootQuality)
         {
@@ -78,7 +82,7 @@
         }
 
         //Method to return the state, to avoid change to public the state 
-        public  State GetState()
+        public State GetState()
         {
             return _state;
         }
