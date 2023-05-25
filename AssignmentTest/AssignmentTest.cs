@@ -172,7 +172,7 @@ namespace AssignmentTest
             Assert.AreEqual(TreasureChest.LootQuality.Grey, lootQuality);
         }
 
-        //Test ToString method
+        /*//Test ToString method
         public void ToStringTest()
         {
             var state = TreasureChest.State.Open;
@@ -186,6 +186,6 @@ namespace AssignmentTest
             var result = treasureChest.ToString();
 
             Assert.AreEqual(expectedString, result);
-        }
+        }*/
     }
 }
