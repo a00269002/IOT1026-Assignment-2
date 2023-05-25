@@ -77,7 +77,7 @@ namespace AssignmentTest
             Assert.AreEqual(chest.GetState(), TreasureChest.State.Locked);
         }
 
-        /*[TestMethod]
+        [TestMethod]
         public void LockedOpenTest()
         {
             TreasureChest chest = new TreasureChest(TreasureChest.State.Open);//Creating a new chest in state Open
@@ -121,7 +121,7 @@ namespace AssignmentTest
             Assert.AreEqual(chest.GetState(), TreasureChest.State.Open);
         }
 
-        [TestMethod]
+        /*[TestMethod]
         public void ActionOpenTest()
         {
             TreasureChest chest = new TreasureChest();
