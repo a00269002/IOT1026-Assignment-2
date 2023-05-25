@@ -121,13 +121,13 @@ namespace AssignmentTest
             Assert.AreEqual(chest.GetState(), TreasureChest.State.Open);
         }
 
-        /*[TestMethod]
+        //Test manipulate action open
+        [TestMethod]
         public void ActionOpenTest()
         {
-            TreasureChest chest = new TreasureChest();
-            
-            chest.Unlock();
-            Assert.AreEqual(chest.GetState(), TreasureChest.State.Open);
-        }*/
+            TreasureChest chest = new TreasureChest(TreasureChest.State.Closed);
+            var result = chest.Manipulate(TreasureChest.Action.Open);
+            Assert.AreEqual(TreasureChest.State.Open, result);
+        }
     }
 }
