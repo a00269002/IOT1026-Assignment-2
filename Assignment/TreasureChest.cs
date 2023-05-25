@@ -19,7 +19,7 @@
         {
             _state = state;
         }
-        
+
         //Parametrized constructor
         public TreasureChest(Material material, LockType lockType, LootQuality lootQuality)
         {
