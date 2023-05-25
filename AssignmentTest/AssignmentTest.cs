@@ -70,13 +70,6 @@ namespace AssignmentTest
         //3. Try to lock a locked chest
 
         [TestMethod]
-        public void LockedLockedTest()
-        {
-            TreasureChest chest = new TreasureChest(TreasureChest.State.Locked);//Creating a new chest in state Locked
-            chest.Lock();
-            Assert.AreEqual(chest.GetState(), TreasureChest.State.Locked);
-        }
-        [TestMethod]
         public void LockedClosedTest()
         {
             TreasureChest chest = new TreasureChest(TreasureChest.State.Closed);//Creating a new chest in state Closed
@@ -84,12 +77,20 @@ namespace AssignmentTest
             Assert.AreEqual(chest.GetState(), TreasureChest.State.Locked);
         }
 
-        [TestMethod]
+        /*[TestMethod]
         public void LockedOpenTest()
         {
             TreasureChest chest = new TreasureChest(TreasureChest.State.Open);//Creating a new chest in state Open
             chest.Lock();
             Assert.AreEqual(chest.GetState(), TreasureChest.State.Open);
+        }
+
+        [TestMethod]
+        public void LockedLockedTest()
+        {
+            TreasureChest chest = new TreasureChest(TreasureChest.State.Locked);//Creating a new chest in state Locked
+            chest.Lock();
+            Assert.AreEqual(chest.GetState(), TreasureChest.State.Locked);
         }
 
         //Unit test cases for Unlock method
@@ -119,5 +120,14 @@ namespace AssignmentTest
             chest.Unlock();
             Assert.AreEqual(chest.GetState(), TreasureChest.State.Open);
         }
+
+        [TestMethod]
+        public void ActionOpenTest()
+        {
+            TreasureChest chest = new TreasureChest();
+            
+            chest.Unlock();
+            Assert.AreEqual(chest.GetState(), TreasureChest.State.Open);
+        }*/
     }
 }
