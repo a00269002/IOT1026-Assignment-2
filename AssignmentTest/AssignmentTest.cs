@@ -129,5 +129,32 @@ namespace AssignmentTest
             var result = chest.Manipulate(TreasureChest.Action.Open);
             Assert.AreEqual(TreasureChest.State.Open, result);
         }
+
+        //Test manipulate action close
+        [TestMethod]
+        public void ActionCloseTest()
+        {
+            TreasureChest chest = new TreasureChest(TreasureChest.State.Open);
+            var result = chest.Manipulate(TreasureChest.Action.Close);
+            Assert.AreEqual(TreasureChest.State.Closed, result);
+        }
+
+        //Test manipulate action lock
+        [TestMethod]
+        public void ActionLockTest()
+        {
+            TreasureChest chest = new TreasureChest(TreasureChest.State.Closed);
+            var result = chest.Manipulate(TreasureChest.Action.Lock);
+            Assert.AreEqual(TreasureChest.State.Locked, result);
+        }
+
+        //Test manipulate action unlock
+        [TestMethod]
+        public void ActionUnlockTest()
+        {
+            TreasureChest chest = new TreasureChest(TreasureChest.State.Locked);
+            var result = chest.Manipulate(TreasureChest.Action.Unlock);
+            Assert.AreEqual(TreasureChest.State.Closed, result);
+        }
     }
 }
