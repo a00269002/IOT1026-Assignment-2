@@ -14,8 +14,6 @@
 # IOT1026-Assignment-2
 
 Open, Close, Lock, and Unlock are the four main methods used in the treasure chest project to specify the behaviours of the prize. Include certain states as well to specify how the treasure should operate and how it might vary from state to state. How to transition from Open to Close, Close to Locked, and the other way around. Following this diagram.
-        
-        <img width="1153" alt="Screenshot 2023-05-24 at 7 09 24 PM" src="https://github.com/a00269002/IOT1026-Assignment-2/assets/123220170/d9698b68-99c6-4afc-a60f-93d6678ac53b">
 
 **Bonus:** Improve the state diagram in the instructions.md file to use treasure chests and make a pull request to receive a 1% bonus. If multiple students make a pull request, the request I incorporate into the assignment will receive a 2% bonus. Ensure your pull request does not incorporate any other changes.
 
