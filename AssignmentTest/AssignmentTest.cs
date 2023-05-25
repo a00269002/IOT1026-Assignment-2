@@ -156,5 +156,36 @@ namespace AssignmentTest
             var result = chest.Manipulate(TreasureChest.Action.Unlock);
             Assert.AreEqual(TreasureChest.State.Closed, result);
         }
+
+        //Test Parametrized constructor 
+        [TestMethod]
+        public void ParametrizedConstructorTreasureChestTest()
+        {
+            var material = TreasureChest.Material.Oak;
+            var lockType = TreasureChest.LockType.Novice;
+            var lootQuality = TreasureChest.LootQuality.Grey;
+
+            var treasureChest = new TreasureChest(material, lockType, lootQuality);
+
+            Assert.AreEqual(TreasureChest.Material.Oak, material);
+            Assert.AreEqual(TreasureChest.LockType.Novice, lockType);
+            Assert.AreEqual(TreasureChest.LootQuality.Grey, lootQuality);
+        }
+
+        //Test ToString method
+        public void ToStringTest()
+        {
+            var state = TreasureChest.State.Open;
+            var material = TreasureChest.Material.Iron;
+            var lockType = TreasureChest.LockType.Expert;
+            var lootQuality = TreasureChest.LootQuality.Purple;
+            var expectedString = $"A {state} chest with the following properties:\nMaterial: {material}\nLock Type: {lockType}\nLoot Quality: {lootQuality}";
+
+            var treasureChest = new TreasureChest(material, lockType, lootQuality);
+
+            var result = treasureChest.ToString();
+
+            Assert.AreEqual(expectedString, result);
+        }
     }
 }
