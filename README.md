@@ -13,8 +13,8 @@
 
 # IOT1026-Assignment-2
 
-Write a description of the project here and don't forget to update the badges.
-
+Open, Close, Lock, and Unlock are the four main methods used in the treasure chest project to specify the behaviours of the prize. Include certain states as well to specify how the treasure should operate and how it might vary from state to state. How to transition from Open to Close, Close to Locked, and the other way around.
+        
 **Bonus:** Improve the state diagram in the instructions.md file to use treasure chests and make a pull request to receive a 1% bonus. If multiple students make a pull request, the request I incorporate into the assignment will receive a 2% bonus. Ensure your pull request does not incorporate any other changes.
 
 [Assignment Instructions](docs/instructions.md)  
